@@ -3,7 +3,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: ghcr.io/${GITHUB_USERNAME}/nginx-test-pull-image-app:sha-6770072
+    image: ghcr.io/${GITHUB_USERNAME}/nginx-test-pull-image-app:latest
     container_name: nginx-test
     ports:
       - "8080:80"
