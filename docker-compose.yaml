@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: ghcr.io/${GITHUB_USERNAME}/${REPO_NAME}:latest
+    container_name: nginx-test
+    ports:
+      - "8080:80"
+    environment:
+      - REPO_NAME=https://github.com/x81k25/k8s-manifests/tree/main/nginx-test-app
+      - DOCKER_REGISTRY=ghcr.io
+      - DOCKER_USERNAME=${GITHUB_USERNAME}
+      - DOCKER_PASSWORD=${GHCR_PULL_IMAGE_TOKEN}
+    restart: unless-stopped
